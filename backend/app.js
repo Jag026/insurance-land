@@ -6,7 +6,7 @@ const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 
-const { environment } = rquire('./config');
+const { environment } = require('./config');
 const isProduction = environment === 'production';
 
 const app = express();

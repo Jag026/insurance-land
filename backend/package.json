@@ -24,12 +24,13 @@
     "helmet": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "per-env": "^1.0.2",
     "sequelize": "^6.23.2",
     "sequelize-cli": "^6.5.1"
   },
   "devDependencies": {
     "dotenv-cli": "^6.0.0",
     "nodemon": "^2.0.20",
-    "sqlite3": "^5.1.1"
+    "sqlite3": "^5.1.2"
   }
 }
