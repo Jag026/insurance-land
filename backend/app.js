@@ -12,3 +12,33 @@ const isProduction = environment === 'production';
 const app = express();
 
 app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(express.json());
+
+//Security Middleware
+if (!isProduction) {
+    //enable cors only in development
+    app.use(cors());
+}
+
+app.use(
+    helmet.crossOriginResourcePolicy({
+        policy: "cross-origin"
+    })
+);
+
+app.use(
+    csurf({
+        cookie: {
+            secure: isProduction,
+            sameSite: isProduction && "Lax",
+            httpOnly: true
+        }
+    })
+);
+
+const routes = require('./routes');
+
+app.use(routes);
+
+module.exports = app;
