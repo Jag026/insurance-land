@@ -41,6 +41,23 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       }
+    },
+        {
+      sequelize,
+      modelName: "Company",
+      defaultScope: {
+        attributes: {
+          exclude: ["hashedPassedword", "email", "createdAt", "updatedAt"]
+        }
+      },
+      scopes: {
+        currentUser: {
+          attributes: { exclude: ["hashedPassedword"] }
+        },
+        loginUser: {
+          attributes: {}
+        }
+      }
     }
   );
   return Company;
