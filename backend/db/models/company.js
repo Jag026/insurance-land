@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       return bcrypt.compareSync(password, this.hashedPassedword.toString());
     }
     
-    static getCurrentUserById(id) {
+    static getCurrentCompanyById(id) {
       return Company.scope("currentCompany").findByPk(id);
     }
 
@@ -90,7 +90,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
       scopes: {
-        currentUser: {
+        currentCompany: {
           attributes: { exclude: ["hashedPassedword"] }
         },
         loginUser: {

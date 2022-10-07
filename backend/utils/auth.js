@@ -30,24 +30,23 @@ const setTokenCookie = (res, user) => {
   // Sends a JWT Cookie
   const setTokenCookieCompany = (res, company) => {
     // Create the token.
-    const tokenCompany = jwt.sign(
+    const token = jwt.sign(
       { data: company.toSafeObject() },
       secret,
       { expiresIn: parseInt(expiresIn) } // 604,800 seconds = 1 week
     );
 
-
-    const isProduction = process.env.NODE_ENV === "production";
+    const isProductionCompany = process.env.NODE_ENV === "production";
 
     // Set the token cookie
-    res.cookie('company-token', companyToken, {
+    res.cookie('token', token, {
       maxAge: expiresIn * 1000, // maxAge in milliseconds
       httpOnly: true,
-      secure: isProduction,
-      sameSite: isProduction && "Lax"
+      secure: isProductionCompany,
+      sameSite: isProductionCompany && "Lax"
     });
 
-    return companyToken;
+    return token;
   };
 
   const restoreUser = (req, res, next) => {
@@ -76,10 +75,10 @@ const setTokenCookie = (res, user) => {
   
   const restoreCompany = (req, res, next) => {
     // token parsed from cookies
-    const { companyToken } = req.cookies;
+    const { token } = req.cookies;
     req.company = null;
 
-    return jwt.verify(companyToken, secret, null, async (err, jwtPayload) => {
+    return jwt.verify(token, secret, null, async (err, jwtPayload) => {
       if (err) {
         return next();
       }
@@ -88,11 +87,11 @@ const setTokenCookie = (res, user) => {
         const { id } = jwtPayload.data;
         req.company = await Company.scope('currentCompany').findByPk(id);
       } catch (e) {
-        res.clearCookie('token');
+        res.clearCookie('company-token');
         return next();
       }
 
-      if (!req.company) res.clearCookie('token');
+      if (!req.company) res.clearCookie('company-token');
 
       return next();
     });
