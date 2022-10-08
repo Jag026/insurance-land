@@ -108,4 +108,15 @@ const requireAuth = function (req, _res, next) {
   return next(err);
 }
 
-module.exports = { setTokenCookie, restoreUser, requireAuth, restoreCompany, setTokenCookieCompany };
+// If there is no current user, return an error
+const requireAuthCompany = function (req, _res, next) {
+  if (req.company) return next();
+
+  const err = new Error('Unauthorized');
+  err.title = 'Unauthorized';
+  err.errors = ['Unauthorized'];
+  err.status = 401;
+  return next(err);
+}
+
+module.exports = { setTokenCookie, restoreUser, requireAuth, restoreCompany, setTokenCookieCompany, requireAuthCompany };

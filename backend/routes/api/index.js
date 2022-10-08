@@ -56,6 +56,15 @@ router.get(
   }
 );
 
+// GET /api/require-auth-company
+const { requireAuthCompany } = require('../../utils/auth.js');
+router.get(
+  '/require-auth-company',
+  requireAuthCompany,
+  (req, res) => {
+    return res.json(req.company);
+  }
+);
 
 
 module.exports = router;
