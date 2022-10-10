@@ -1,5 +1,6 @@
 'use strict';
 const { Model, Validator } = require('sequelize');
+const bcrypt = require('bcryptjs');
 
 module.exports = (sequelize, DataTypes) => {
   class Company extends Model {
@@ -93,7 +94,7 @@ module.exports = (sequelize, DataTypes) => {
         currentCompany: {
           attributes: { exclude: ["hashedPassedword"] }
         },
-        loginUser: {
+        loginCompany: {
           attributes: {}
         }
       }
