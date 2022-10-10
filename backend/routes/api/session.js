@@ -90,4 +90,18 @@ router.delete(
   }
 );
 
+// Restore session company
+router.get(
+    '/company-session',
+  restoreCompany,
+  (req, res) => {
+    const { company } = req;
+    if (company) {
+      return res.json({
+        company: company.toSafeObject()
+      });
+    } else return res.json({});
+  }
+);
+
 module.exports = router;
