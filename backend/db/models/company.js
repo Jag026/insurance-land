@@ -33,12 +33,13 @@ module.exports = (sequelize, DataTypes) => {
       }
      }
     
-    static async signup({ username, email, password }) {
+    static async signup({ username, email, password, ownedPolicies }) {
       const hashedPassedword = bcrypt.hashSync(password);
       const company = await Company.create({
         username,
         email,
-        hashedPassedword
+        hashedPassedword,
+        ownedPolicies
       });
       return await Company.scope('currentCompany').findByPk(company.id);
     }
