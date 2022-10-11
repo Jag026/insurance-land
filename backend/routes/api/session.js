@@ -75,6 +75,7 @@ router.get(
 // Log in
 router.post(
   '/company-login',
+  validateLogin,
   async (req, res, next) => {
     const { credential, password } = req.body;
 
