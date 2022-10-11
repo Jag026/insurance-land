@@ -4,6 +4,7 @@ const { handleValidationErrors } = require('../../utils/validation');
 
 const { setTokenCookieCompany, requireAuthCompany } = require('../../utils/auth');
 const { Company } = require('../../db/models');
+const { Policy } = require('../../db/models');
 
 const router = express.Router();
 
@@ -43,4 +44,16 @@ router.post(
   }
 );
 
+// Add policy
+router.post(
+  '/add-policy',
+  async (req, res) => {
+    const { name, premium, description, companyName } = req.body;
+    const policy = await Policy.create({ name, premium, description, companyName });
+
+    return res.json({
+      policy
+    });
+  }
+);
 module.exports = router;
