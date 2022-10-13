@@ -12,8 +12,8 @@ router.use('/session', sessionRouter);
 router.use('/users', userRouter);
 router.use('/companies', companyRouter);
 
-router.post('/test', function (req, res) {
-  res.json({ requestBody: req.body })
+router.get('/test', function (req, res) {
+  res.json({ 'Hello!' })
 });
 
 module.exports = router;
