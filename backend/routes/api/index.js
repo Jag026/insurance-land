@@ -13,7 +13,7 @@ router.use('/users', userRouter);
 router.use('/companies', companyRouter);
 
 router.get('/test', function (req, res) {
-  res.json({ Hello })
+  res.json("Hello")
 });
 
 module.exports = router;
