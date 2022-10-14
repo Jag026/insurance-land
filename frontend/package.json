@@ -15,7 +15,6 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1"
   },
-  "proxy": "http://localhost:8000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -39,5 +38,6 @@
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }
