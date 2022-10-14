@@ -1,0 +1,25 @@
+.form-container {
+    width: 50%;
+}
+
+form {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 10px;
+}
+
+ button {
+    width: 100px
+ }
+
+ label{
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ input {
+    margin-left: 20px;
+ }
