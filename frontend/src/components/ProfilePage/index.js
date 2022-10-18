@@ -1,35 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfilePageButton from './ProfilePageButton.js';
+// import ProfilePageButton from './ProfilePageButton.js';
 
-function ProfilePage({ isLoaded }){
+function ProfilePage(){
   const sessionUser = useSelector(state => state.session.user);
-
-  let sessionLinks;
-  if (sessionUser) {
-    sessionLinks = (
-      <ProfilePageButton user={sessionUser} />
-    );
-  } else {
-    sessionLinks = (
-      <>
-        <NavLink to="/policies">View Policies</NavLink>
-        <NavLink to="/marketplace">Market Place</NavLink>
-      </>
-    );
-  }
-
+   const user = sessionUser;
     return (
-     <div class="nav">
-      <nav>
-       <ul>
-          <li>
-          <NavLink exact to="/">Home</NavLink>
-          {isLoaded && sessionLinks}
-          </li>
+       <div>
+        <ul>
+          <p>{user.username}</p>
+          <p>{user.email}</p>
+          <p>Policy Ids: {user.policyIds}</p>
        </ul>
-      </nav>
      </div>
   );
 }
