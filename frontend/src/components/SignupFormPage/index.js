@@ -19,7 +19,7 @@ function SignupFormPage() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password, policyIds }))
+      return dispatch(sessionActions.signup({ email, username, password }))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
@@ -70,14 +70,14 @@ function SignupFormPage() {
         />
       </label>
       <label>
-        Policy Ids
+        Confirm Password
         <input
           type="text"
           value={policyIds}
           onChange={(e) => setPolicyIds(e.target.value)}
           required
-              />
-        </label>
+        />
+      </label>
       <button type="submit">Sign Up</button>
     </form>
   );
