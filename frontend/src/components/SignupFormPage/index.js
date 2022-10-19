@@ -13,13 +13,13 @@ function SignupFormPage() {
   const [policyIds, setPolicyIds] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/profile" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password }))
+      return dispatch(sessionActions.signup({ email, username, password, policyIds }))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
@@ -70,7 +70,7 @@ function SignupFormPage() {
         />
       </label>
       <label>
-        Confirm Password
+        Policy Ids
         <input
           type="text"
           value={policyIds}

@@ -33,10 +33,8 @@ function Navigation({ isLoaded }){
 
   return (
     <ul>
-      <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/profile">Profile</NavLink>
         {isLoaded && sessionLinks}
-      </li>
     </ul>
   );
 }
