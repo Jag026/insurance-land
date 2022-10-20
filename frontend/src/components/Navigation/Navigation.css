@@ -1,6 +1,16 @@
 nav {
-    background-color: aqua;
+    background-color: #202054;
     position:fixed;
     inset: 0;
     height: 8%;
+    font-size: 24px;
+}
+
+a:link {
+    color:white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
 }
