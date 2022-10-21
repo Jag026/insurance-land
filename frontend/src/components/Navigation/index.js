@@ -26,8 +26,9 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <nav>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
+          <NavLink class="nav-login" to="/login">Log In</NavLink>
+          <NavLink class="nav-signup" to="/signup">Sign Up</NavLink>
+          <h1 class="navTitle">Insurity</h1>
         </nav>
       </>
     );
