@@ -3,9 +3,9 @@ nav {
     position:fixed;
     inset: 0;
     height: 6%;
-    display: grid;
-    grid-template-columns: 2% 7% 7% 30% 20% 20% 10% 4%;
-    grid-template-rows: 25% 25% 25% 20% 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: "Oswald";
     
 }
@@ -15,6 +15,7 @@ a:link {
     text-decoration: none;
     font-size: 18px;
     font-family: "Oswald";
+    padding-left: 14px;
 }
 
 a:visited {
@@ -24,18 +25,14 @@ a:visited {
 .navTitle {
     color: white;
     font-size: 30px;
-        grid-column-start: 7;
-        grid-row-start: 1;
-        vertical-align: top;
-        padding-bottom: 5px;
+    padding-right: 30px;
+    font-weight: 800;
 }
 
-.nav-login {
-    grid-column-start: 2;
-    grid-row-start: 3;
+a:hover {
+    color: #4a8cd8;
 }
 
-.nav-signup {
-    grid-column-start: 3;
-    grid-row-start: 3;
+a:visited:hover {
+    color: #4a8cd8;
 }

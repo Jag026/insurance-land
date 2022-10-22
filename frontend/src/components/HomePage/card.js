@@ -3,7 +3,14 @@ import './HomePage.css'
 
 function Card(props) {
     return (
-    <button>{ props.text }</button>
+        <div class="card">
+            <div class="logo-container">
+                <i class={props.logo}></i>
+            </div>
+            <div class="text-container">
+                <p>{props.text}</p>
+            </div>
+         </div>
     )
 }
 
