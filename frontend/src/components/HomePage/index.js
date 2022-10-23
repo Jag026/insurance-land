@@ -14,22 +14,21 @@ function HomePage(){
          <div class='title-buttons'>
           <h2>Select one of the following options to get started</h2>
           <div class="button-grid">
-            <Card text="User Login" logo="fa-solid fa-hotel" />
-            <Card text="Company Login" logo="fa-solid fa-hotel" />
-            <Card text="New User" logo="fa-solid fa-hotel" />
-            <Card text="Register User" logo="fa-solid fa-hotel" />
+            <Card text="User Login" logo="fa-solid fa-user" />
+            <Card text="Company Login" logo="fa-solid fa-building" />
+            <Card text="New User" logo="fa-solid fa-user-plus" />
+            <Card text="Register Company" logo="fa-solid fa-building-circle-check" />
           </div>
          </div>
          
-         <div class="aligator-container">
+         <div class="fox-container">
             <img class="fox" src={require('./fox.png')} alt="smiling fox" />
          </div>
          
         </div>
-        <h2>OR</h2>
+        <h2>OR Browse The Marketplace For Products</h2>
           <div class="marketplace-cta">
-            <h2>Browse The Marketplace For Products</h2>
-            <button>Take Me There</button>
+            <Card text="Marketplace" logo="fa-solid fa-shop" />
           </div>
         </div>
        </div>

@@ -5,6 +5,7 @@ img {
 body {
     background-color: #2b2b2f
 }
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -16,6 +17,8 @@ body {
     background-color: black;
     width: 100vw;
     color:#4a8cd8;
+    margin: -12px;
+    margin-bottom: 10px;
     align-items: center;
     height: 50px;
     justify-content: center;
@@ -57,12 +60,15 @@ button:hover {
     margin-top: 30px;
 }
 
-.aligator-container {
+.fox-container {
     background-color: #4a8cd8;
     border-radius: 50%;
+    margin-left: 100px;
 }
-.fox{
-    padding-left: 60px;
+.fox {
+    padding: 60px;
+    height: 260px;
+    width: 260px;
 }
 
 .title-buttons {
@@ -100,4 +106,16 @@ button:hover {
 
 .card:hover {
     background-color: #4a8cd8;
+}
+
+.marketplace-cta {
+    width: 64%
+}
+
+i {
+    color: #4a8cd8;
+}
+
+i:hover {
+    color: white;
 }
