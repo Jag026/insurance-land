@@ -2,7 +2,7 @@ nav {
     background-color: #3d3d42;
     position:fixed;
     inset: 0;
-    height: 6%;
+    height: 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,5 +34,15 @@ a:hover {
 }
 
 a:visited:hover {
+    color: #4a8cd8;
+}
+
+a.logout {
+    cursor: pointer;
+    padding-left: 30px;
+    font-size: 18px;
+    color: white;
+}
+a.logout:hover {
     color: #4a8cd8;
 }

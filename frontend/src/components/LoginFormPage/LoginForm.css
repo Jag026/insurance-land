@@ -3,6 +3,8 @@
 }
 
 form {
+    font-family: "Oswald";
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -12,20 +14,25 @@ form {
 }
 
 
- button {
-    width: auto;
-    height: 25px;
- }
 
  label{
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 22px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
  }
 
  input {
     margin-top: 10px;
     width: 200px;
-    height: 25px;
+    height: 30px;
  }
 
+ .login-button {
+   width: 27%;
+      height: 45px;
+      margin: 0px;
+      font-family: "Oswald";
+      color: white;
+      background-color: #4a8cd8;
+      font-size: 18px;
+ }

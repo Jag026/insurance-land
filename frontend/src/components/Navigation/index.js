@@ -12,15 +12,21 @@ function Navigation({ isLoaded }){
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    window.location.href = '/';
   };
   
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <div>
-        <button onClick={logout}>Log Out</button>
-        <Redirect to="/" />
+      <nav>
+       <div>
+         <a onClick={logout} class="logout">Log Out</a>
+       </div>
+       
+        <div class="nav-div">
+          <h1 class="navTitle">Insurity</h1>
         </div>
+      </nav>
     );
   } else {
     sessionLinks = (
