@@ -38,7 +38,10 @@ export const login = (user) => async (dispatch) => {
   return response;
 };
 
-const initialState = { user: null };
+const initialState = {
+  user: null,
+  policies: null
+};
 
 const sessionReducer = (state = initialState, action) => {
   let newState;

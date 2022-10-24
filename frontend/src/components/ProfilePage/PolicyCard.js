@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 function PolicyCard(props) {
 
     return (
-        <div class="polciy-card">
+        <div class="policy-card">
             <p>{props.id}</p>
             <p>{props.name}</p>
             <p>{props.companyName}</p>
