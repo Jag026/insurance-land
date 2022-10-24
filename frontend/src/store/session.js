@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
+const SET_POLICIES = 'session/setPolicies';
 
 const setUser = (user) => {
   return {
@@ -13,6 +14,13 @@ const setUser = (user) => {
 const removeUser = () => {
   return {
     type: REMOVE_USER,
+  };
+};
+
+const setPolicies = (policies) => {
+  return {
+    type: SET_POLICIES,
+    payload: policies,
   };
 };
 
@@ -43,8 +51,13 @@ const sessionReducer = (state = initialState, action) => {
       newState = Object.assign({}, state);
       newState.user = null;
       return newState;
+    case SET_POLICIES:
+      newState = Object.assign({}, state);
+      newState.policies = action.payload;
+      return newState;
     default:
       return state;
+
   }
 };
 
@@ -76,6 +89,15 @@ export const logout = () => async (dispatch) => {
     method: 'DELETE',
   });
   dispatch(removeUser());
+  return response;
+};
+
+export const getPolicies = (policies) => async (dispatch) => {
+  const response = await csrfFetch('/api/session/policies', {
+    method: 'GET',
+  });
+  const data = await response.json();
+  dispatch(setPolicies(data.policies));
   return response;
 };
 
