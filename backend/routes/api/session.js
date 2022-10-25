@@ -8,6 +8,8 @@ const { User } = require('../../db/models');
 const { setTokenCookieCompany, restoreCompany } = require('../../utils/auth');
 const { Company } = require('../../db/models');
 
+const { Policy } = require('../../db/models');
+
 const router = express.Router();
 
 
@@ -119,5 +121,11 @@ router.get(
     } else return res.json({});
   }
 );
+
+router.post('/policies', async (req, res) => {
+  const policies = await Policy.findAll({ order: [['id', 'ASC']] });
+  return res.json({policies});
+});
+
 
 module.exports = router;
