@@ -33,6 +33,7 @@ export const login = (user) => async (dispatch) => {
       password,
     }),
   });
+  dispatch(getPolicies());
   const data = await response.json();
   dispatch(setUser(data.user));
   return response;
@@ -65,6 +66,7 @@ const sessionReducer = (state = initialState, action) => {
 };
 
 export const restoreUser = () => async dispatch => {
+  dispatch(getPolicies());
   const response = await csrfFetch('/api/session');
   const data = await response.json();
   dispatch(setUser(data.user));
@@ -97,7 +99,7 @@ export const logout = () => async (dispatch) => {
 
 export const getPolicies = (policies) => async (dispatch) => {
   const response = await csrfFetch('/api/session/policies', {
-    method: 'GET',
+    method: 'POST',
   });
   const data = await response.json();
   dispatch(setPolicies(data.policies));
