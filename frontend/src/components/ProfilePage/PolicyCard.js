@@ -1,11 +1,10 @@
 import React from 'react';
 import './ProfilePage.css' 
-import { useSelector } from 'react-redux';
 
 function PolicyCard(props) {
 
     return (
-        <div class="policy-card">
+        <div class="policy-card" to="/login">
             <p>{props.id}</p>
             <p>{props.name}</p>
             <p>{props.companyName}</p>

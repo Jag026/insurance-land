@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomePage.css' 
+import { NavLink, Redirect } from 'react-router-dom';
 
 function Card(props) {
     return (
@@ -8,7 +9,7 @@ function Card(props) {
                 <i class={props.logo}></i>
             </div>
             <div class="text-container">
-                <p>{props.text}</p>
+                <NavLink to={`/${props.link}`} class="navLink"><a>{props.text}</a></NavLink>
             </div>
          </div>
     )
