@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import CompanyLoginFormPage from "./components/CompanyLoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
+import CompanySignupFormPage from "./components/CompanySignupFormPage";
 import ProfilePage from "./components/ProfilePage";
 import CompanyProfilePage from "./components/CompanyProfilePage";
 import * as sessionActions from "./store/session";
@@ -15,6 +16,10 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(sessionActions.restoreCompany()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
   return (
@@ -30,6 +35,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/company-signup">
+            <CompanySignupFormPage />
           </Route>
           <Route exact path="/profile">
             <ProfilePage />

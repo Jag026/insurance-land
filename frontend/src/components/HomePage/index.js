@@ -17,7 +17,7 @@ function HomePage(){
             <Card text="User Login" logo="fa-solid fa-user" link='login' />
             <Card text="Company Login" logo="fa-solid fa-building" link="company-login" />
             <Card text="New User" logo="fa-solid fa-user-plus" link="signup" />
-            <Card text="Register Company" logo="fa-solid fa-building-circle-check" link="login" />
+            <Card text="Register Company" logo="fa-solid fa-building-circle-check" link="company-signup" />
           </div>
          </div>
          

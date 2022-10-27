@@ -145,6 +145,23 @@ export const logout = () => async (dispatch) => {
   return response;
 };
 
+export const signupCompany = (company) => async dispatch => {
+  dispatch(getPolicies());
+  const { username, email, password, ownedPolicies } = company;
+  const response = await csrfFetch('/api/companies', {
+    method: "POST",
+    body: JSON.stringify({
+      username,
+      email,
+      password,
+      ownedPolicies
+    }),
+  });
+  const data = await response.json();
+  dispatch(setCompany(data.company));
+  return response;
+}
+
 export const logoutCompany = () => async (dispatch) => {
   const response = await csrfFetch('/api/session', {
     method: 'DELETE',
