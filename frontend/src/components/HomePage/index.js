@@ -15,8 +15,8 @@ function HomePage(){
           <h2>Select one of the following options to get started</h2>
           <div class="button-grid">
             <Card text="User Login" logo="fa-solid fa-user" link='login' />
-            <Card text="Company Login" logo="fa-solid fa-building" link="signup" />
-            <Card text="New User" logo="fa-solid fa-user-plus" link="login" />
+            <Card text="Company Login" logo="fa-solid fa-building" link="company-login" />
+            <Card text="New User" logo="fa-solid fa-user-plus" link="signup" />
             <Card text="Register Company" logo="fa-solid fa-building-circle-check" link="login" />
           </div>
          </div>
