@@ -7,6 +7,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import CompanySignupFormPage from "./components/CompanySignupFormPage";
 import ProfilePage from "./components/ProfilePage";
 import CompanyProfilePage from "./components/CompanyProfilePage";
+import AddPolicy from "./components/AddPolicy";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route exact path="/company-profile">
             <CompanyProfilePage />
+          </Route>
+          <Route exact path="/add-policy">
+            <AddPolicy />
           </Route>
           <Route exact path="/">
             <HomePage />
