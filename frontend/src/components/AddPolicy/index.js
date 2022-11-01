@@ -15,7 +15,6 @@ function AddPolicy() {
   const handleSubmit = (e) => {
     e.preventDefault();
       return dispatch(sessionActions.addPolicy({ name, premium, description, companyName }))
-        .then(console.log('success'))
         .then(window.location.href = '/company-profile')
         .catch(async (res) => {
           const data = await res.json();
