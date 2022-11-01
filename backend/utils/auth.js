@@ -87,11 +87,11 @@ const setTokenCookie = (res, user) => {
         const { id } = jwtPayload.data;
         req.company = await Company.scope('currentCompany').findByPk(id);
       } catch (e) {
-        res.clearCookie('company-token');
+        res.clearCookie('token');
         return next();
       }
 
-      if (!req.company) res.clearCookie('company-token');
+      if (!req.company) res.clearCookie('token');
 
       return next();
     });
