@@ -103,7 +103,7 @@ router.post(
 router.delete(
   '/company-logout',
   (_req, res) => {
-    res.clearCookie('XSRF-TOKEN');
+    res.clearCookie('token-company');
     return res.json({ message: 'success' });
   }
 );
@@ -127,5 +127,15 @@ router.post('/policies', async (req, res) => {
   return res.json({policies});
 });
 
+router.post(
+    '/add-user-policy',
+  restoreUser,
+  async (req, res, next) => {
+    const { num, userId } = await req.body;
+    await User.addPolicy({ num, userId })
+     return res.json({
+    });
+  }
+);
 
 module.exports = router;

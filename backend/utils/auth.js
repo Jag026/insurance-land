@@ -14,7 +14,7 @@ const setTokenCookie = (res, user) => {
     secret,
     { expiresIn: parseInt(expiresIn) } // 604,800 seconds = 1 week
   );
-
+    
   const isProduction = process.env.NODE_ENV === "production";
 
   // Set the token cookie
@@ -27,10 +27,12 @@ const setTokenCookie = (res, user) => {
 
   return token;
 };
+
+
   // Sends a JWT Cookie
   const setTokenCookieCompany = (res, company) => {
     // Create the token.
-    const token = jwt.sign(
+    const tokenCompany = jwt.sign(
       { data: company.toSafeObject() },
       secret,
       { expiresIn: parseInt(expiresIn) } // 604,800 seconds = 1 week
@@ -39,14 +41,14 @@ const setTokenCookie = (res, user) => {
     const isProductionCompany = process.env.NODE_ENV === "production";
 
     // Set the token cookie
-    res.cookie('token', token, {
+    res.cookie('token-company', tokenCompany, {
       maxAge: expiresIn * 1000, // maxAge in milliseconds
       httpOnly: true,
       secure: isProductionCompany,
       sameSite: isProductionCompany && "Lax"
     });
 
-    return token;
+    return tokenCompany;
   };
 
   const restoreUser = (req, res, next) => {
@@ -75,10 +77,10 @@ const setTokenCookie = (res, user) => {
   
   const restoreCompany = (req, res, next) => {
     // token parsed from cookies
-    const { token } = req.cookies;
+    const { tokenCompany } = req.cookies;
     req.company = null;
 
-    return jwt.verify(token, secret, null, async (err, jwtPayload) => {
+    return jwt.verify(tokenCompany, secret, null, async (err, jwtPayload) => {
       if (err) {
         return next();
       }
@@ -87,11 +89,11 @@ const setTokenCookie = (res, user) => {
         const { id } = jwtPayload.data;
         req.company = await Company.scope('currentCompany').findByPk(id);
       } catch (e) {
-        res.clearCookie('token');
+        res.clearCookie('token-company');
         return next();
       }
 
-      if (!req.company) res.clearCookie('token');
+      if (!req.company) res.clearCookie('token-company');
 
       return next();
     });
