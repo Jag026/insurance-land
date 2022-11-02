@@ -18,7 +18,7 @@ function ProfilePage() {
   console.log(userPolicies)
   return (
        <div>
-        <ProfileCard name={user.username} email={user.email} />
+      <ProfileCard name={user.username} email={user.email} policyNum={userPolicies.length} />
         <div>
           {userSessionPolicies.map(policy => (
             <PolicyCard id={policy.id} name={policy.name} companyName={policy.companyName} description={policy.description} premium={policy.premium} />
