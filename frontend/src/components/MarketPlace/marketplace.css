@@ -1,0 +1,18 @@
+.policy-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.policy {
+    font-family: Oswald;
+    font-size: 18px;
+    color: #4a8cd8;
+    background-color: black;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;;
+}

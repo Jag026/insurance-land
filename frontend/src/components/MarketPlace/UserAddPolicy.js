@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import './marketplace.css'
 
 export function UserAddPolicy(props) {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ export function UserAddPolicy(props) {
   };
 
   return (
-    <div>
+    <div className="policy">
       <h1>{props.header}</h1>
           <h2>Policy ID: {props.num}</h2>
           <h2>User ID: {props.userId}</h2>
