@@ -19,6 +19,7 @@ export function UserAddPolicy(props) {
     <div>
       <h1>{props.header}</h1>
           <h2>Policy ID: {props.num}</h2>
+          <h2>User ID: {props.userId}</h2>
       <form onSubmit={handleSubmit}>
         <button type="submit">Add Policy</button>
       </form>

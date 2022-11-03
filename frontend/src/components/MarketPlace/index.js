@@ -4,16 +4,15 @@ import { UserAddPolicy } from './UserAddPolicy.js'
 import * as sessionActions from "../../store/session";
 
 function Marketplace() {  
-
-  //const dispatch = useDispatch();
-  //dispatch.sessionActions.getPolicies();
+  const sessionUser = useSelector(state => state.session.user);
+  const user = sessionUser;
   const policies = useSelector(state => state.session.policies);
 
   return (
       <div>
-          <h2>Curruent User: 16</h2>
+          <h2>Curruent User: {user.username}</h2>
           {policies.map(policy => (
-              <UserAddPolicy num={policy.id} userId={16} header={policy.name} />
+              <UserAddPolicy num={policy.id} userId={user.id} header={policy.name} />
           ))}
         </div>
   );
