@@ -14,6 +14,11 @@ function Navigation({ isLoaded }){
     dispatch(sessionActions.logout());
     window.location.href = '/';
   };
+
+  const goHome = (e) => {
+    e.preventDefault();
+    window.location.href = '/';
+  };
   
   let sessionLinks;
   if (sessionUser) {
@@ -24,7 +29,7 @@ function Navigation({ isLoaded }){
        </div>
        
         <div class="nav-div">
-          <h1 class="navTitle">Insurity</h1>
+          <h1 onClick={goHome} class="navTitle">Insurity</h1>
         </div>
       </nav>
     );
