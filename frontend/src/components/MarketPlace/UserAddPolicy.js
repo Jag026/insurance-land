@@ -10,6 +10,7 @@ export function UserAddPolicy(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
       return dispatch(sessionActions.addUserPolicy({ num, userId }))
+        .then(window.location.href = '/marketplace')
         .catch(async (res) => {
           const data = await res.json();
         });

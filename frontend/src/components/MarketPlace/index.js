@@ -11,9 +11,11 @@ function Marketplace() {
   return (
       <div>
           <h2>Curruent User: {user.username}</h2>
-          {policies.map(policy => (
-              <UserAddPolicy num={policy.id} userId={user.id} header={policy.name} />
-          ))}
+          {policies.map((policy => {
+              if (!user.policyIds.includes(policy.id)) {
+                  return <UserAddPolicy num={policy.id} userId={user.id} header={policy.name} />
+              }
+          }))}
         </div>
   );
 }
