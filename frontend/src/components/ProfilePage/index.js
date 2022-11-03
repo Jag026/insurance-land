@@ -15,7 +15,6 @@ function ProfilePage() {
     }
   })
 
-  console.log(userPolicies)
   return (
        <div>
       <ProfileCard name={user.username} email={user.email} policyNum={userPolicies.length} />

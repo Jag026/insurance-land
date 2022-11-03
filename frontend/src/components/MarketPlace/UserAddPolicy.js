@@ -16,9 +16,13 @@ export function UserAddPolicy(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Add Policy</button>
-    </form>
+    <div>
+      <h1>{props.header}</h1>
+          <h2>Policy ID: {props.num}</h2>
+      <form onSubmit={handleSubmit}>
+        <button type="submit">Add Policy</button>
+      </form>
+    </div>
   );
 }
 
