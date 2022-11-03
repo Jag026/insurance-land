@@ -28,7 +28,7 @@ function HomePage(){
         </div>
         <h2>OR Browse The Marketplace For Products</h2>
           <div class="marketplace-cta">
-            <Card text="Marketplace" logo="fa-solid fa-shop" />
+            <Card text="Marketplace" logo="fa-solid fa-shop" link="marketplace"/>
           </div>
         </div>
        </div>

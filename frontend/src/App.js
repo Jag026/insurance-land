@@ -11,6 +11,7 @@ import AddPolicy from "./components/AddPolicy";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
+import Marketplace from "./components/MarketPlace";
 
 function App() {
   const dispatch = useDispatch();
@@ -48,6 +49,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route exact path="/marketplace">
+            <Marketplace />
           </Route>
         </Switch>
       )}

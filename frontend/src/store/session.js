@@ -196,4 +196,18 @@ export const addPolicy = (policy) => async dispatch => {
   return response;
 }
 
+export const addUserPolicy = (body) => async (dispatch) => {
+  const { num, userId } = body;
+  const response = await csrfFetch('/api/session/add-user-policy', {
+    method: "POST",
+    body: JSON.stringify({
+      num,
+      userId
+    }),
+  });
+  const data = await response.json();
+  dispatch(setPolicies(data.policies));
+  return response;
+};
+
 export default sessionReducer;
