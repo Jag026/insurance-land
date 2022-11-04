@@ -210,4 +210,18 @@ export const addUserPolicy = (body) => async (dispatch) => {
   return response;
 };
 
+
+export const deleteUserPolicy = (body) => async (dispatch) => {
+  const { policyId, userId } = body;
+  const response = await csrfFetch('/api/session/delete-policy', {
+    method: "POST",
+    body: JSON.stringify({
+      policyId,
+      userId
+    }),
+  });
+  const data = await response.json();
+  dispatch(setPolicies(data.policies));
+  return response;
+};
 export default sessionReducer;
