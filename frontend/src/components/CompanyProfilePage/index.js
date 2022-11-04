@@ -16,10 +16,15 @@ function CompanyProfilePage(isLoadedCompany) {
     window.location.href = '/';
   };
   
+  const addPolicy = (e) => {
+    e.preventDefault();
+    window.location.href = '/add-policy';
+  };
   return (
     <div>
       <ProfileCard name={company.name} email={company.email} />
       <button onClick={logoutCompany}>Logout</button>
+      <button onClick={addPolicy}>Add Policy</button>
         <div>
           {sessionPolicies.map(policy => (
             <PolicyCard id={policy.id} name={policy.name} companyName={policy.companyName} description={policy.description} premium={policy.premium} />

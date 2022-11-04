@@ -138,4 +138,15 @@ router.post(
   }
 );
 
+
+router.post(
+    '/delete-policy',
+  restoreUser,
+  async (req, res, next) => {
+    const { policyId, userId } = await req.body;
+    await User.deletePolicy({ policyId, userId })
+     return res.json({
+    });
+  }
+);
 module.exports = router;

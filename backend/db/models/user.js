@@ -55,6 +55,17 @@ module.exports = (sequelize, DataTypes) => {
       console.log(JSON.stringify(newUsersPolicies))
       await user.update({policyIds: JSON.stringify(newUsersPolicies)});
     }
+
+    static async deletePolicy({ policyId, userId }) {
+      const user = await User.scope('currentUser').findByPk(userId);
+      const userPolicies = JSON.parse(user.policyIds);
+      const parsedId = parseInt(policyId)
+      const updatedPolicies = userPolicies.filter(id => id !== parsedId)
+      const newUsersPolicies = await updatedPolicies;
+      console.log(newUsersPolicies);
+      console.log(JSON.stringify(newUsersPolicies))
+      await user.update({policyIds: JSON.stringify(newUsersPolicies)});
+    }
     
     static associate(models) {
       // define association here
