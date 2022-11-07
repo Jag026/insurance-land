@@ -4,10 +4,14 @@ import ProfileCard from "./ProfileCard"
 import PolicyCard from "./PolicyCard"
 import * as sessionActions from '../../store/session';
 
-function CompanyProfilePage(isLoadedCompany) {  
+function CompanyProfilePage() {  
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(sessionActions.restoreCompany());
+  }, [dispatch]);
+  
   const sessionCompany = useSelector(state => state.session.company);
   const company = sessionCompany;
-  const dispatch = useDispatch();
   const sessionPolicies = useSelector(state => state.session.policies);
 
   const logoutCompany = (e) => {

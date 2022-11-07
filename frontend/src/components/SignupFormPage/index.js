@@ -10,7 +10,7 @@ function SignupFormPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [policyIds, setPolicyIds] = useState("");
+  const [policyIds, setPolicyIds] = useState("[]");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/profile" />;
@@ -73,16 +73,12 @@ function SignupFormPage() {
           required
         />
       </label>
-      <label>
-        Policy Ids
         <br></br>
         <input
+          hidden
           type="text"
           value={policyIds}
-          onChange={(e) => setPolicyIds(e.target.value)}
-          required
         />
-      </label>
       <button type="submit">Sign Up</button>
     </form>
   );

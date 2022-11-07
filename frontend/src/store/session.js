@@ -23,8 +23,8 @@ const setCompany = (company) => {
   return {
     type: SET_COMPANY,
     payload: company,
-  }
-}
+  };
+};
 
 const removeCompany = () => {
   return {
