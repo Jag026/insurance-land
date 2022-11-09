@@ -103,7 +103,7 @@ router.post(
 router.delete(
   '/company-logout',
   (_req, res) => {
-    res.clearCookie('token-company');
+    res.clearCookie('tokenCompany');
     return res.json({ message: 'success' });
   }
 );

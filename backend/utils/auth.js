@@ -41,7 +41,7 @@ const setTokenCookie = (res, user) => {
     const isProductionCompany = process.env.NODE_ENV === "production";
 
     // Set the token cookie
-    res.cookie('token-company', tokenCompany, {
+    res.cookie('tokenCompany', tokenCompany, {
       maxAge: expiresIn * 1000, // maxAge in milliseconds
       httpOnly: true,
       secure: isProductionCompany,
@@ -76,7 +76,7 @@ const setTokenCookie = (res, user) => {
   };
   
   const restoreCompany = (req, res, next) => {
-    // token parsed from cookies
+     // token parsed from cookies
     const { tokenCompany } = req.cookies;
     req.company = null;
 
@@ -89,11 +89,11 @@ const setTokenCookie = (res, user) => {
         const { id } = jwtPayload.data;
         req.company = await Company.scope('currentCompany').findByPk(id);
       } catch (e) {
-        res.clearCookie('token-company');
+        res.clearCookie('tokenCompany');
         return next();
       }
 
-      if (!req.company) res.clearCookie('token-company');
+      if (!req.company) res.clearCookie('tokenCompany');
 
       return next();
     });
