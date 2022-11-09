@@ -163,7 +163,7 @@ export const signupCompany = (company) => async dispatch => {
 }
 
 export const logoutCompany = () => async (dispatch) => {
-  const response = await csrfFetch('/api/session', {
+  const response = await csrfFetch('/api/session/company-logout', {
     method: 'DELETE',
   });
   dispatch(removeCompany());

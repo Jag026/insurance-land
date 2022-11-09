@@ -43,7 +43,7 @@ function Navigation({ isLoaded }){
           </div>
 
           <div class="nav-div">
-            <h1 class="navTitle">Insurity</h1>
+            <h1 onClick={goHome} class="navTitle">Insurity</h1>
           </div>
 
         </nav>

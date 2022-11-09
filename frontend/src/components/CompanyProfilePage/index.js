@@ -8,6 +8,7 @@ function CompanyProfilePage() {
   const dispatch = useDispatch();
   const sessionCompany = useSelector(state => state.session.company);
   const company = sessionCompany;
+  console.log(company);
   const sessionPolicies = useSelector(state => state.session.policies)
 
 
