@@ -6,13 +6,10 @@ import * as sessionActions from '../../store/session';
 
 function CompanyProfilePage() {  
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(sessionActions.restoreCompany());
-  }, [dispatch]);
-  
   const sessionCompany = useSelector(state => state.session.company);
   const company = sessionCompany;
-  const sessionPolicies = useSelector(state => state.session.policies);
+  const sessionPolicies = useSelector(state => state.session.policies)
+
 
   const logoutCompany = (e) => {
     e.preventDefault();

@@ -22,17 +22,10 @@ function App() {
     }
   }, [dispatch]);
 
-  const [isLoadedCompany, setIsLoadedCompany] = useState(false);
-  useEffect(() => {
-    if (sessionActions.restoreCompany()) {
-      dispatch(sessionActions.restoreCompany()).then(() => setIsLoadedCompany(true));
-    }
-  }, [dispatch]);
-
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {(isLoaded || isLoadedCompany) && (
+      {isLoaded && (
         <Switch>
           <Route path="/login">
             <LoginFormPage />

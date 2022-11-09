@@ -113,7 +113,7 @@ export const restoreUser = () => async dispatch => {
 };
 
 export const restoreCompany = () => async dispatch => {
-  dispatch(getPolicies());
+  // dispatch(getPolicies());
   const response = await csrfFetch('/api/session/company-session');
   const data = await response.json();
   dispatch(setCompany(data.company));
