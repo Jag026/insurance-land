@@ -7,7 +7,7 @@ function HomePage(){
     return (
     <div>
      <h1 class="top-header">The Ultimate Insurance Marketplace</h1>
-     <div class="container">
+     <div class="container-home">
         
        <div class="cta-text">
         <div class="top-cta">

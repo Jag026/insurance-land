@@ -4,7 +4,7 @@ import { NavLink, Redirect } from 'react-router-dom';
 
 function Card(props) {
     return (
-        <div class="card">
+        <div class="card-home">
             <div class="logo-container">
                 <i class={props.logo}></i>
             </div>

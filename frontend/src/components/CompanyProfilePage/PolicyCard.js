@@ -9,7 +9,7 @@ function PolicyCard(props) {
             <p>{props.name}</p>
             <p>{props.companyName}</p>
             <p>{props.description}</p>
-            <p>{props.premium}</p>
+            <p>${props.premium}</p>
         </div>
     )
 }

@@ -6,7 +6,7 @@ body {
     background-color: #2b2b2f
 }
 
-.container {
+.container-home {
     display: flex;
     justify-content: space-between;
 
@@ -75,7 +75,7 @@ button:hover {
     min-width: 80%;
 }
 
-.card {
+.card-home {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -104,7 +104,7 @@ button:hover {
     padding-left: 12px;
 }
 
-.card:hover {
+.card-home:hover {
     background-color: #4a8cd8;
 }
 

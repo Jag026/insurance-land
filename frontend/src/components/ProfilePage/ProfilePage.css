@@ -12,6 +12,7 @@
     box-shadow: 2px 2px 2px black;
 }
 
+/*
 .policy-card {
     color: white;
     font-family: "Oswald";
@@ -24,4 +25,63 @@
     width: 340px;
     border-radius: 10px;
     box-shadow: 2px 2px 2px black;
+}
+
+*/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 130px;
+    padding-right: 30px;
+}
+
+.card {
+    color: white;
+    font-family: "Oswald";
+    font-size: 18px;
+    margin-left: -120px;
+    margin-top: 40px;
+    padding: 10px;
+    padding-left: 12px;
+    width: 340px;
+    min-height: 380px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    transition: 0.4s ease-out;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 6px solid;
+    border-color: #2b2b2e;
+    background-color: black;
+    background: linear-gradient(180deg, #4a8cd8 12%, black 12%);
+}
+
+.card:not(:first-child) {
+    margin-left: 50px;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+    background-color: #4a8cd8;
+}
+
+.card:hover~.card {
+    left: 50px;
+    transition: 0.4s ease-out;
+    margin: 100px;
+}
+
+.submitButton {
+    margin-top: -20px;
+}
+
+.card-header-p {
+    font-size: 24px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }

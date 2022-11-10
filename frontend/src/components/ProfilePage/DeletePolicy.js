@@ -5,7 +5,7 @@ import * as sessionActions from "../../store/session";
 
 function DeletePolicy(props) {
   const dispatch = useDispatch();
-  const policyId = props.policyId
+  const policyId = props.id
   const userId = props.userId
   const handleSubmit = (e) => {
     e.preventDefault();
