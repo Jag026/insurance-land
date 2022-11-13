@@ -138,6 +138,16 @@ router.post(
   }
 );
 
+router.post(
+    '/add-company-policy',
+  restoreCompany,
+  async (req, res, next) => {
+    const { num, companyId } = await req.body;
+    await Company.addPolicy({ num, companyId })
+     return res.json({
+    });
+  }
+);
 
 router.post(
     '/delete-policy',

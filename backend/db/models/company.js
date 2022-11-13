@@ -44,6 +44,17 @@ module.exports = (sequelize, DataTypes) => {
       return await Company.scope('currentCompany').findByPk(company.id);
     }
 
+    static async addPolicy({ num, companyId }) {
+      const company = await Company.scope('currentCompany').findByPk(companyId);
+      const companyPolicies = JSON.parse(company.ownedPolicies);
+      const parsedNum = parseInt(num)
+      companyPolicies.push(parsedNum);
+      const newCompanyPolicies = await companyPolicies;
+      console.log(newCompanyPolicies);
+      console.log(JSON.stringify(newCompanyPolicies))
+      await company.update({ownedPolicies: JSON.stringify(newCompanyPolicies)});
+    }
+
     static associate(models) {
       // define association here
     }
