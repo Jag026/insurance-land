@@ -4,13 +4,22 @@ import ProfileCard from "./ProfileCard"
 import PolicyCard from "./PolicyCard"
 import * as sessionActions from '../../store/session';
 
-function CompanyProfilePage() {  
-  const dispatch = useDispatch();
+function CompanyProfilePage() { 
   const sessionCompany = useSelector(state => state.session.company);
   const company = sessionCompany;
-  console.log(company);
+  const dispatch = useDispatch();
   const sessionPolicies = useSelector(state => state.session.policies)
 
+  //sets policies owned by company
+  const companyPolicies = JSON.parse(company.ownedPolicies);
+  console.log(companyPolicies);
+
+  let companySessionPolicies = [];
+  sessionPolicies.forEach(policy => {
+    if (companyPolicies.includes(policy.id)) {
+      companySessionPolicies.push(policy)
+    }
+  })
 
   const logoutCompany = (e) => {
     e.preventDefault();
@@ -24,11 +33,11 @@ function CompanyProfilePage() {
   };
   return (
     <div>
-      <ProfileCard name={company.name} email={company.email} />
+      <ProfileCard name={company.name} email={company.email} id={company.id} />
       <button onClick={logoutCompany}>Logout</button>
       <button onClick={addPolicy}>Add Policy</button>
         <div>
-          {sessionPolicies.map(policy => (
+          {companySessionPolicies.map(policy => (
             <PolicyCard id={policy.id} name={policy.name} companyName={policy.companyName} description={policy.description} premium={policy.premium} />
           ))}
         </div>

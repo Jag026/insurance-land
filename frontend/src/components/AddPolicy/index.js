@@ -6,6 +6,7 @@ import * as sessionActions from "../../store/session";
 function AddPolicy() {
   const dispatch = useDispatch();
   const sessionPolicies = useSelector((state) => state.session.policy);
+  const sessionCompany = useSelector(state => state.session.company);
   const [name, setName] = useState("");
   const [premium, setPremium] = useState("");
   const [description, setDescription] = useState("");
@@ -14,7 +15,7 @@ function AddPolicy() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      return dispatch(sessionActions.addPolicy({ name, premium, description, companyName }))
+    return dispatch(sessionActions.addPolicy({ name, premium, description, companyName }))
         .then(window.location.href = '/company-profile')
         .catch(async (res) => {
           const data = await res.json();
@@ -62,7 +63,7 @@ function AddPolicy() {
         <br></br>
         <input
           type="text"
-          value={companyName}
+          value={sessionCompany.username}
           onChange={(e) => setCompanyName(e.target.value)}
           required
         />

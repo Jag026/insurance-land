@@ -10,6 +10,7 @@ function ProfileCard(props) {
         <div class="profile-card">
             <p>{props.name}</p>
             <p>{props.email}</p>
+            <p>id:{props.id}</p>
             <p> Number of owned policies: {numberOfPolicies}</p>
         </div>
     )
