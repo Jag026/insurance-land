@@ -179,8 +179,8 @@ export const getPolicies = (policies) => async (dispatch) => {
   return response;
 };
 
-export const addPolicy = (policy) => async dispatch => {
-  dispatch(getPolicies());
+export const addPolicy = (policy, newCompanyId) => async dispatch => {
+  // dispatch(getPolicies());
   const { name, premium, description, companyName, companyId } = policy;
   const response = await csrfFetch('/api/companies/add-policy', {
     method: "POST",
@@ -196,8 +196,9 @@ export const addPolicy = (policy) => async dispatch => {
   const newPolicyId = await newPolicy["policy"].id;
   console.log('policy Id:');
   console.log(newPolicyId);
-  console.log(companyId);
-  await dispatch(addCompanyPolicy(newPolicyId, companyId));
+  console.log(await newCompanyId);
+
+  dispatch(addCompanyPolicy(newPolicyId, newCompanyId));
   //dispatch(setPolicies(data.policies));
   return response;
 }
@@ -218,8 +219,8 @@ export const addUserPolicy = (body) => async (dispatch) => {
 
 export const addCompanyPolicy = (newPolicyId, companyID) => async (dispatch) => {
   // const { num, companyId } = body;
-  const num = newPolicyId;
-  const companyId = companyID;
+  const num = await newPolicyId;
+  const companyId = await companyID;
   const response = await csrfFetch('/api/session/add-company-policy', {
     method: "POST",
     body: JSON.stringify({

@@ -11,17 +11,20 @@ function AddPolicy() {
   const [premium, setPremium] = useState("");
   const [description, setDescription] = useState("");
   const [companyName, setCompanyName] = useState("");
+  const [companyId, setCompanyId] = useState("");
   const [errors, setErrors] = useState([]);
-
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    return dispatch(sessionActions.addPolicy({ name, premium, description, companyName }))
-        .then(window.location.href = '/company-profile')
+    await dispatch(sessionActions.addPolicy({ name, premium, description, companyName }, sessionCompany.id))
+    await console.log(sessionCompany.id)
+    await (window.location.href = '/company-login')
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
         });
   };
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -58,16 +61,17 @@ function AddPolicy() {
           required
         />
       </label>
-      <label>
-        Company Name
-        <br></br>
         <input
           type="text"
-          value={sessionCompany.username}
+          value={companyName}
           onChange={(e) => setCompanyName(e.target.value)}
-          required
+
         />
-      </label>
+        <input
+          type="integer"
+          value={companyId}
+          onChange={(e) => setCompanyId(e.target.value)}
+        />
       <button type="submit">Add Policy</button>
     </form>
   );
