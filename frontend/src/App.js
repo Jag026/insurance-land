@@ -32,37 +32,43 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {(isLoaded || isLoadedCompany) && (
-        <Switch>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/company-login">
-            <CompanyLoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path="/company-signup">
-            <CompanySignupFormPage />
-          </Route>
-          <Route exact path="/profile">
-            <ProfilePage />
-          </Route>
-          <Route exact path="/company-profile">
-            <CompanyProfilePage />
-          </Route>
-          <Route exact path="/add-policy">
-            <AddPolicy />
-          </Route>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route exact path="/marketplace">
-            <MarketPlace />
-          </Route>
-        </Switch>
-      )}
+      
+      <div>
+        {isLoaded && (
+          <Switch>
+            <Route path="/login">
+              <LoginFormPage />
+            </Route>
+            <Route path="/company-login">
+              <CompanyLoginFormPage />
+            </Route>
+            <Route path="/signup">
+              <SignupFormPage />
+            </Route>
+            <Route path="/company-signup">
+              <CompanySignupFormPage />
+            </Route>
+            <Route exact path="/profile">
+              <ProfilePage />
+            </Route>
+          </Switch>
+        )}
+        {isLoadedCompany && (
+          <Switch>
+            <Route exact path="/company-profile">
+              <CompanyProfilePage />
+            </Route>
+            <Route exact path="/add-policy">
+              <AddPolicy />
+            </Route>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/marketplace">
+              <MarketPlace />
+            </Route>
+          </Switch>)}
+          </div>
     </>
   );
 }

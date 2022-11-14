@@ -10,9 +10,8 @@ function AddPolicy() {
   const [name, setName] = useState("");
   const [premium, setPremium] = useState("");
   const [description, setDescription] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [companyId, setCompanyId] = useState("");
   const [errors, setErrors] = useState([]);
+  const companyName = sessionCompany.username;
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,17 +60,6 @@ function AddPolicy() {
           required
         />
       </label>
-        <input
-          type="text"
-          value={companyName}
-          onChange={(e) => setCompanyName(e.target.value)}
-
-        />
-        <input
-          type="integer"
-          value={companyId}
-          onChange={(e) => setCompanyId(e.target.value)}
-        />
       <button type="submit">Add Policy</button>
     </form>
   );

@@ -181,7 +181,7 @@ export const getPolicies = (policies) => async (dispatch) => {
 
 export const addPolicy = (policy, newCompanyId) => async dispatch => {
   // dispatch(getPolicies());
-  const { name, premium, description, companyName, companyId } = policy;
+  const { name, premium, description, companyName } = policy;
   const response = await csrfFetch('/api/companies/add-policy', {
     method: "POST",
     body: JSON.stringify({
