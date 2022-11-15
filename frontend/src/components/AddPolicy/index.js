@@ -17,7 +17,7 @@ function AddPolicy() {
     e.preventDefault();
     await dispatch(sessionActions.addPolicy({ name, premium, description, companyName }, sessionCompany.id))
     await console.log(sessionCompany.id)
-    await (window.location.href = '/company-login')
+    await (window.location.href = '/company-profile')
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
