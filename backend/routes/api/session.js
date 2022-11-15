@@ -168,9 +168,6 @@ router.post(
     const { policyId, companyId } = await req.body;
     const policy = await Policy.findByPk(policyId);
     await policy.destroy();
-    console.log(policy);
-    console.log(users[0]['dataValues']['id'])
-    console.log(companyId)
     users.forEach(user => {
       console.log(user);
         const policyIds = JSON.parse(user['dataValues']['policyIds']);
