@@ -50,16 +50,24 @@ module.exports = (sequelize, DataTypes) => {
       const parsedNum = parseInt(num)
       companyPolicies.push(parsedNum);
       const newCompanyPolicies = await companyPolicies;
-      console.log(newCompanyPolicies);
-      console.log(JSON.stringify(newCompanyPolicies))
       await company.update({ownedPolicies: JSON.stringify(newCompanyPolicies)});
+    }
+
+    static async deletePolicy({ policyId, companyId }) {
+      console.log('Delete policy for company: ' + companyId);
+      const company = await Company.scope('currentCompany').findByPk(companyId);
+      const companyPolicies = await JSON.parse(company.ownedPolicies);
+      const parsedPolicyId = parseInt(policyId)
+      const newCompanyPolicies = await companyPolicies.filter(id => id !== parsedPolicyId);
+      await company.update({ ownedPolicies: JSON.stringify(newCompanyPolicies) });
     }
 
     static associate(models) {
       // define association here
     }
   };
-  
+ 
+
   Company.init(
     {
       username: {

@@ -159,4 +159,28 @@ router.post(
     });
   }
 );
+
+router.post(
+    '/company-delete-policy',
+  restoreCompany,
+  async (req, res, next) => {
+    const users = await User.findAll({ order: [['id', 'ASC']] });
+    const { policyId, companyId } = await req.body;
+    console.log(users[0]['dataValues']['id'])
+    console.log(companyId)
+    users.forEach(user => {
+      console.log(user);
+        const policyIds = JSON.parse(user['dataValues']['policyIds']);
+        if (policyIds.includes(policyId)) {
+          const newPolicyIds = policyIds.filter(policy => policy !== policyId);
+          const userId = user.id;
+          User.deletePolicy({ policyId, userId })
+        } 
+    })
+    await Company.deletePolicy({ policyId, companyId })
+     return res.json({
+    });
+  }
+);
+
 module.exports = router;

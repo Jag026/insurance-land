@@ -58,6 +58,7 @@ module.exports = (sequelize, DataTypes) => {
 
     static async deletePolicy({ policyId, userId }) {
       const user = await User.scope('currentUser').findByPk(userId);
+      console.log('user' + user);
       const userPolicies = JSON.parse(user.policyIds);
       const parsedId = parseInt(policyId)
       const updatedPolicies = userPolicies.filter(id => id !== parsedId)
