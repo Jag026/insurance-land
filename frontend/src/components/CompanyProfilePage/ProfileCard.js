@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProfilePage.css' 
 import { useSelector } from 'react-redux';
-
+  
 function ProfileCard(props) {
     const sessionCompany = useSelector(state => state.session.company);
     const company = sessionCompany;    

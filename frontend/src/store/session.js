@@ -246,4 +246,19 @@ export const deleteUserPolicy = (body) => async (dispatch) => {
   dispatch(setPolicies(data.policies));
   return response;
 };
+
+
+export const deleteCompanyPolicy = (body) => async (dispatch) => {
+  const { policyId, companyId } = body;
+  const response = await csrfFetch('/api/session/company-delete-policy', {
+    method: "POST",
+    body: JSON.stringify({
+      policyId,
+      companyId
+    }),
+  });
+  const data = await response.json();
+  dispatch(setPolicies(data.policies));
+  return response;
+};
 export default sessionReducer;

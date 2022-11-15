@@ -24,7 +24,6 @@ function AddPolicy() {
         });
   };
 
-
   return (
     <form onSubmit={handleSubmit}>
       <ul>
