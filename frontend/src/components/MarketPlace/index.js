@@ -1,6 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { UserAddPolicy } from './UserAddPolicy.js'
+import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './marketplace.css'
 
@@ -8,6 +9,7 @@ function Marketplace() {
   const sessionUser = useSelector(state => state.session.user);
   const user = sessionUser;
   const policies = useSelector(state => state.session.policies);
+  if (!sessionUser) return <Redirect to="/company-marketplace" />;
 
   return (
       <div>

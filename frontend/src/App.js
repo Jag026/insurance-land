@@ -12,6 +12,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import MarketPlace from "./components/MarketPlace";
+import CompanyMarketplace from "./components/CompanyMarketplace";
 
 function App() {
   const dispatch = useDispatch();
@@ -66,6 +67,9 @@ function App() {
             </Route>
             <Route exact path="/marketplace">
               <MarketPlace />
+            </Route>
+            <Route exact path="/company-marketplace">
+              <CompanyMarketplace />
             </Route>
           </Switch>)}
           </div>

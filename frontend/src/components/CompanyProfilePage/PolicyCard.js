@@ -12,7 +12,8 @@ function PolicyCard(props) {
     const policyId = props.id;
     const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(sessionActions.deleteCompanyPolicy({ policyId, companyId }))
+        await dispatch(sessionActions.deleteCompanyPolicy({ policyId, companyId }))
+        await (window.location.href = '/company-profile')
         .catch(async (res) => {
           const data = await res.json();
         });
