@@ -33,7 +33,7 @@ function CompanyProfilePage() {
   };
   return (
     <div>
-      <ProfileCard name={company.name} email={company.email} id={company.id} />
+      <ProfileCard name={company.username} />
       <button onClick={logoutCompany}>Logout</button>
       <button onClick={addPolicy}>Add Policy</button>
         <div>
