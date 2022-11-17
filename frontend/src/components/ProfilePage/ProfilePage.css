@@ -12,23 +12,6 @@
     box-shadow: 2px 2px 2px black;
 }
 
-/*
-.policy-card {
-    color: white;
-    font-family: "Oswald";
-    font-size: 18px;
-    margin-left: 20px;
-    margin-top: 40px;
-    padding: 10px;
-    padding-left: 26px;
-    background-color: #3d3d42;
-    width: 340px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px black;
-}
-
-*/
-
 .container {
     display: flex;
     flex-wrap: wrap;

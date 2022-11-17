@@ -20,12 +20,14 @@ function PolicyCard(props) {
   };
     
     return (
-        <div class="policy-card" to="/login">
-            <p>{props.id}</p>
-            <p>{props.name}</p>
-            <p>{props.companyName}</p>
-            <p>{props.description}</p>
-            <p>${props.premium}</p>
+        <div class="policy-card2" to="/login">
+            <h2>{props.name}</h2>
+            <div className="description-container">
+                <p>Description: {props.description}</p>
+            </div>
+            <p>Monthly Premium: ${props.premium}</p>
+            <br></br>
+            <p>Issuing Company Name{props.companyName}</p>
             <form onSubmit={handleSubmit}>
                 <button type="submit">Delete Policy</button>
             </form>
