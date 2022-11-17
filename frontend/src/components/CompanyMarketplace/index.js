@@ -4,6 +4,11 @@ import * as sessionActions from "../../store/session";
 import './companyMarketplace.css'
 
 function CompanyMarketplace() {  
+    const goUserLogin = (e) => {
+    e.preventDefault();
+    window.location.href = '/login';
+    };
+  
   const policies = useSelector(state => state.session.policies);
   console.log(policies)
   return (
@@ -11,9 +16,11 @@ function CompanyMarketplace() {
         <div className="policy-container">
             {policies.map((policy => {
               return <div className="policy">
-               <h1>{policy.name}</h1>
-               <h2>Policy ID: {policy.id}</h2>
-                <h2>Premium: {policy.premium}</h2>
+               <h2 className="policy-name">{policy.name}</h2>
+               <p>Description: <span className="inner-text">${policy.description}</span></p>
+               <p>Issuer: <span className="inner-text">${policy.companyName}</span></p>
+               <p>Monthly Premium: <span className="inner-text">${policy.premium}</span></p>
+               <li><span onClick={goUserLogin} className="login">Login</span> as user to add policy</li>
               </div>
             }))}
         </div>

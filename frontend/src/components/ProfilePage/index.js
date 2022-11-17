@@ -18,9 +18,19 @@ function ProfilePage() {
     }
   })
 
+  const monthlyPremiumArr = [];
+  userSessionPolicies.forEach(policy => {
+    monthlyPremiumArr.push(policy.premium)
+  })
+  const initialValue = 0;
+  const monthlyPremium = monthlyPremiumArr.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+
   return (
        <div>
-      <ProfileCard name={user.username} email={user.email} policyNum={userPolicies.length} />
+      <ProfileCard name={user.username} policyNum={userPolicies.length} monthlyPremium={monthlyPremium} />
         <div className="container">
           {userSessionPolicies.map(policy => (
             <div>

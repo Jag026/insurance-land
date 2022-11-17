@@ -10,10 +10,41 @@
     font-size: 18px;
     color: #4a8cd8;
     background-color: black;
-    width: 30%;
+    width: 27%;
+    height: 350px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    margin-bottom: 50px;
-    ;
+    margin-bottom: 60px;
+    padding-left: 20px;
+    background: linear-gradient(180deg, #4a8cd8 14%, black 12%);
+}
+
+p {
+    font-family: 'Buenard'
+}
+
+li {
+    font-family: 'Buenard';
+    padding-bottom: 20px;
+    margin-top: 50px;
+    color: white;
+}
+
+h2 {
+    margin-top: 3px;
+    color: white;
+}
+
+.inner-text {
+    color: white;
+}
+
+.login {
+    color: #4a8cd8;
+    cursor: pointer;
+}
+
+.login:hover {
+    color: white;
 }
