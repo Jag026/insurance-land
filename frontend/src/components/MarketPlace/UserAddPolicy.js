@@ -18,10 +18,11 @@ export function UserAddPolicy(props) {
   };
 
   return (
-    <div className="policy">
-      <h1>{props.header}</h1>
-          <h2>Policy ID: {props.num}</h2>
-          <h2>User ID: {props.userId}</h2>
+    <div className="policy1">
+          <h2 className="policy-name">{props.name}</h2>
+          <p>Description: <span className="inner-text">{props.description}</span></p>
+          <p>Issuer: <span className="inner-text">{props.companyName}</span></p>
+          <p>Monthly Premium: <span className="inner-text">${props.premium}</span></p>
       <form onSubmit={handleSubmit}>
         <button type="submit">Add Policy</button>
       </form>

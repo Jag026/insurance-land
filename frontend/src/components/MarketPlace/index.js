@@ -14,10 +14,10 @@ function Marketplace() {
   return (
       <div>
           <h2>Curruent User: {user.username}</h2>
-          <div className="policy-container">
+          <div className="policy-container1">
             {policies.map((policy => {
                 if (!user.policyIds.includes(policy.id)) {
-                    return <UserAddPolicy num={policy.id} userId={user.id} header={policy.name} />
+                    return <UserAddPolicy num={policy.id} userId={user.id} name={policy.name} description={policy.description} companyName={policy.companyName} premium={policy.premium} />
                 }
             }))}
           </div>

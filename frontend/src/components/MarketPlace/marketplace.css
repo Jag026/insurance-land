@@ -1,18 +1,49 @@
-.policy-container {
+.policy-container1 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 30px;
 }
 
-.policy {
+.policy1 {
     font-family: Oswald;
     font-size: 18px;
     color: #4a8cd8;
     background-color: black;
-    width: 30%;
+    width: 25%;
+    height: 350px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     margin-bottom: 50px;
+    padding-left: 20px;
+    background: linear-gradient(180deg, #4a8cd8 14%, black 12%);
+    padding-bottom: 30px;
+    box-shadow: -8px 7px 93px -19px rgba(0, 0, 0, 0.75);
+}
+
+p {
+    font-family: 'Buenard'
+}
+
+li {
+    font-family: 'Buenard';
+    padding-bottom: 20px;
+    margin-top: 50px;
+    color: white;
+}
+
+h2 {
+    margin-top: 3px;
+    color: white;
+}
+
+button {
+    background-color: #4a8cd8;
+    color: white;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
 }

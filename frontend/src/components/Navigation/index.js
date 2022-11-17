@@ -53,7 +53,7 @@ function Navigation({ isLoaded }){
 
   return (
     <ul>
-        <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/profile"></NavLink>
         {isLoaded && sessionLinks}
     </ul>
   );
