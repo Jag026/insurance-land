@@ -20,6 +20,7 @@ function PolicyCard(props) {
   };
     
     return (
+      <div>
         <div class="policy-card2" to="/login">
             <h2>{props.name}</h2>
             <div className="description-container">
@@ -28,11 +29,11 @@ function PolicyCard(props) {
             <p>Monthly Premium: ${props.premium}</p>
             <br></br>
             <p>Issuing Company Name{props.companyName}</p>
+            </div>
             <form onSubmit={handleSubmit}>
                 <button type="submit">Delete Policy</button>
             </form>
-        </div>
-
+      </div>
     )
 }
 

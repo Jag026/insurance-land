@@ -40,6 +40,7 @@
     border-color: #2b2b2e;
     background-color: black;
     background: linear-gradient(180deg, #4a8cd8 12%, black 12%);
+    flex-wrap: wrap;
 }
 
 .card:not(:first-child) {

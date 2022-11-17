@@ -20,6 +20,7 @@
     background: linear-gradient(180deg, #4a8cd8 14%, black 12%);
     padding-bottom: 30px;
     box-shadow: -8px 7px 93px -19px rgba(0, 0, 0, 0.75);
+    word-wrap: break-word;
 }
 
 p {

@@ -36,7 +36,7 @@ function CompanyProfilePage() {
       <ProfileCard name={company.username} />
       <button onClick={logoutCompany}>Logout</button>
       <button onClick={addPolicy}>Add Policy</button>
-        <div>
+        <div className="policy-container2">
           {companySessionPolicies.map(policy => (
             <PolicyCard id={policy.id} name={policy.name} companyName={policy.companyName} description={policy.description} premium={policy.premium} />
           ))}

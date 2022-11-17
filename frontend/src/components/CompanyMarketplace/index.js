@@ -16,7 +16,9 @@ function CompanyMarketplace() {
         <div className="policy-container">
             {policies.map((policy => {
               return <div className="policy">
-               <h2 className="policy-name">{policy.name}</h2>
+                <div className="policy-title-container">
+                  <h2 className="policy-name">{policy.name}</h2>
+                </div>
                <p>Description: <span className="inner-text">${policy.description}</span></p>
                <p>Issuer: <span className="inner-text">${policy.companyName}</span></p>
                <p>Monthly Premium: <span className="inner-text">${policy.premium}</span></p>
