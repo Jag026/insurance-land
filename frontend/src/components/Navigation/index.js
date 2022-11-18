@@ -29,7 +29,7 @@ function Navigation({ isLoaded }){
        </div>
        
         <div class="nav-div">
-          <h1 onClick={goHome} class="navTitle">Insurity</h1>
+          <h1 onClick={goHome} class="navTitle">Insurance Land</h1>
         </div>
       </nav>
     );
@@ -43,7 +43,7 @@ function Navigation({ isLoaded }){
           </div>
 
           <div class="nav-div">
-            <h1 onClick={goHome} class="navTitle">Insurity</h1>
+            <h1 onClick={goHome} class="navTitle">Insurance Land</h1>
           </div>
 
         </nav>
