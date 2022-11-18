@@ -11,7 +11,7 @@ The main features of this app are:
 
 ## Home Page
 Clients can either join/login as a user or a company. 
-![]()
+<img alt="Homepage" src="https://user-images.githubusercontent.com/74638539/202765500-e5b0db97-e4d5-4aa4-902c-4b0f912c8090.png">![image]()
 
 
 ## Marketplace
