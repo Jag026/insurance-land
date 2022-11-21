@@ -29,7 +29,7 @@
     padding: 0px;
     padding-left: 12px;
     padding-right: 12px;
-    width: 340px;
+    min-width: 340px;
     min-height: 380px;
     box-shadow: 2px 2px 2px black;
     flex-direction: column;
