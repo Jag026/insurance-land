@@ -28,7 +28,7 @@ function PolicyCard(props) {
             </div>
             <p>Monthly Premium: ${props.premium}</p>
             <br></br>
-            <p>Issuing Company Name{props.companyName}</p>
+            <p>Issuing Company Name: {props.companyName}</p>
             </div>
             <form onSubmit={handleSubmit}>
                 <button type="submit">Delete Policy</button>
