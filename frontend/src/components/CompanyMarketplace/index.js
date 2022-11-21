@@ -10,7 +10,6 @@ function CompanyMarketplace() {
     };
   
   const policies = useSelector(state => state.session.policies);
-  console.log(policies)
   return (
     <div>
         <div className="policy-container">

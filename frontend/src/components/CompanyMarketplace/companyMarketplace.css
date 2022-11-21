@@ -56,3 +56,8 @@ h2 {
 .policy-title-container {
     font-size: 16px;
 }
+
+.current-company {
+    font-size: 14px;
+    color: white;
+}
