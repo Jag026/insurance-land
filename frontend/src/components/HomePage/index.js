@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import * as sessionActions from '../../store/session';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Card from './card.js'
 import './HomePage.css' 
 
-function HomePage(){
+function HomePage() {
+  const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    return dispatch(sessionActions.loginDemo())
+  }
+
+  const handleSubmitCompany = (e) => {
+    e.preventDefault();
+    return dispatch(sessionActions.loginDemoCompany())
+  }
+  
     return (
     <div>
      <h1 class="top-header">The Ultimate Insurance Marketplace</h1>
@@ -18,7 +33,11 @@ function HomePage(){
             <Card text="Company Login" logo="fa-solid fa-building" link="company-login" />
             <Card text="New User" logo="fa-solid fa-user-plus" link="signup" />
             <Card text="Register Company" logo="fa-solid fa-building-circle-check" link="company-signup" />
+            <a className="demo-user" onClick={handleSubmit} href=""> <i class="fa-solid fa-arrow-right"></i> Login As Demo User</a>
+            <a className="demo-company" onClick={handleSubmitCompany} href=""><i class="fa-solid fa-arrow-right"></i> Login As Demo Company</a>
+           
           </div>
+            
          </div>
          
          <div class="fox-container">

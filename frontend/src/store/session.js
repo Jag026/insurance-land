@@ -54,6 +54,40 @@ export const login = (user) => async (dispatch) => {
   return response;
 };
 
+export const loginDemo = () => async (dispatch) => {
+  const credential = 'Demo'
+  const password = 'password'
+  const response = await csrfFetch('/api/session', {
+    method: 'POST',
+    body: JSON.stringify({
+      credential,
+      password,
+    }),
+  });
+  dispatch(getPolicies());
+  const data = await response.json();
+  dispatch(setUser(data.user));
+  window.location.href = '/profile';
+  return response;
+};
+
+export const loginDemoCompany = () => async (dispatch) => {
+  const credential = 'Demo_Company'
+  const password = 'password'
+  const response = await csrfFetch('/api/session/company-login', {
+    method: 'POST',
+    body: JSON.stringify({
+      credential,
+      password,
+    }),
+  });
+  dispatch(getPolicies());
+  const data = await response.json();
+  dispatch(setCompany(data.company));
+  window.location.href = '/company-profile';
+  return response;
+};
+
 export const loginCompany = (company) => async (dispatch) => {
   const { credential, password } = company;
   const response = await csrfFetch('/api/session/company-login', {
