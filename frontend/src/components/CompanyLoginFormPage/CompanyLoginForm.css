@@ -28,7 +28,7 @@ input {
 }
 
 .login-button {
-    width: 27%;
+    width: 100px;
     height: 45px;
     margin: 0px;
     font-family: "Oswald";

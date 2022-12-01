@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import './SignUpForm.css';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -79,7 +80,7 @@ function SignupFormPage() {
           type="text"
           value={policyIds}
         />
-      <button type="submit">Sign Up</button>
+      <button className="sign-up-button" type="submit">Sign Up</button>
     </form>
   );
 }
