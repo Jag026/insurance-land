@@ -10,7 +10,7 @@ function CompanySignupFormPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [ownedPolicies, setOwnedPolicies] = useState("");
+  const [ownedPolicies, setOwnedPolicies] = useState("[]");
   const [errors, setErrors] = useState([]);
 
   if (sessionCompany) return <Redirect to="/company-profile" />;
@@ -74,9 +74,8 @@ function CompanySignupFormPage() {
         />
       </label>
       <label>
-        Owned Policies
-        <br></br>
         <input
+          hidden
           type="text"
           value={ownedPolicies}
           onChange={(e) => setOwnedPolicies(e.target.value)}
