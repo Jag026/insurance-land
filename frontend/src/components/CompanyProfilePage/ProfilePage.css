@@ -48,3 +48,18 @@ h2 {
     font-family: 'Oswald';
     color: white;
 }
+
+.profile-button-container {
+    margin: 30px;
+}
+
+.profile-button {
+      width: 100px;
+      height: 45px;
+      margin: 0px;
+      font-family: "Oswald";
+      color: white;
+      background-color: #4a8cd8;
+      font-size: 18px;
+      margin-right: 30px;
+}
